@@ -11,9 +11,14 @@ There are multiple vulnerability scanner to ensure safety of an environment.
 ## 1. Acunetix
 It is an automated we applicaton security testing tools that audits web applications by checking for vulnerabilities like SQL injections, Cross site scripting and other exploitable vulnerabilities.
 
-What is Ascunetix deepscan?
+What is Acunetix deepscan?
 
 - Is the latest revolutionary technology avaliable within acunetix that can crawl and scan modern     HTML5 and JavaScript-based web applications.
 
 - Only web vulnerabilities scanner on the market capable of doing this.
+
+
+## 2. Burp Suite
+It is a web vulnerability scanner that is frequently updated, and integrates with bug tracking systems.
+
 
