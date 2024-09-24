@@ -55,15 +55,41 @@ It is a web vulnerability scanner that is frequently updated, and integrates wit
 ## 3. OpenVAS
  It is vulnerability analysis tool that allows  scan network devices and server. It looks for an IP address and checks for any open service by scanning through the open ports, vulnerabilities and misconfigation in the existing facilities.
 
-
 It is a full-featured vulnerability scanner which include unauthenticated and authenticated testing.
+
+#### OpenVAS offers
+1. Simple scan
+
+- The OpenVAS web interface includes a wizard to help set up scans of target machines.
+- Here, we need to give IP address to scan.
+- As the scan runs, any vulnerabilities that it detects will be listed in the report.
+
+2. Advance scan 
+- the OpenVAS web interface also includes an Advanced Task Wizard 
+- The advanced wizard offers the following scanning options:
+
+  - Setting a name for the task
+  - Choosing a scan config
+  - Setting the target IP address
+  - Scheduling future scans
+   - Using a credentialed scan
 
 ## 4. Nexpose
 Nexpose vulnerability scanner is an automated penetration testing system. Nexpose can help you identify the open ports, applications, and services on each scanned machine.
 
+#### Integrating Nexpose with Metasploit
+
+The Nexpose vulnerability scanner integrates with Rapid7’s Metasploit to then support vulnerability assessment and validation. 
+
+
+#### Why Nexpose?
 - It is one of the most leading and the most used Network vulnerability scanner.
 - And it operates all physical location, cloud and mobile environment.
 -  Nexpose has a desirable feature called Live Monitoring. Live Monitoring collects data and creates action plans.
+- It aslo have feature called Live board. Live boards visual reporting is constantly updated in real time to provide much better visibile
+- remediation workflow, which  tracks and manages the security team’s operations and monitors the overall progress of the team in addressing the identified vulnerabilities.
+
+Vulnerabilities that are exploited are first prioritized by Nexpose. This keeps security operations teams from getting overloaded with security alerts. 
 
  ## 5. Necess
  - It takes care of malware, software issues, patching and misconfigation adware removal tool over a wide range of application and operating systems.
@@ -75,6 +101,18 @@ Nexpose vulnerability scanner is an automated penetration testing system. Nexpos
  - It takes care of remote code execuation flaws.
  
  - it works on the most of the network devices including physical,virtual and cloud infrastructure. 
+
+ #### How Nessus Scans Work
+Tenable and the Nessus team continually develop “plugins” to perform specific actions such as identifying new vulnerabilities.
+
+1. When a vulnerability scan is run, Nessus will attempt to establish a connection to  network devices and run through its plugins to identify the type of device, the operating system, any running services, the specific versions of these services, and other useful information.
+
+2. As more information is gathered, vulnerability detection tests are also run to determine what security weaknesses devices are affected by, what updates may be missing, and what known vulnerabilities  devices are impacted by.
+
+3. This information is presented within a user interface and can be configured to run on a set schedule and provide email notifications when completed.
+
+References - https://forgesecure.com/what-is-nessus/#ib-toc-anchor-2 
+
 
  ## 6. Nikto
  - It is a vulnerability scanner that helps in understanding server versions, functions perdorming a test on the websers to identify threads and walware presences.
@@ -88,6 +126,41 @@ Nexpose vulnerability scanner is an automated penetration testing system. Nexpos
 Installation - ` sudo apt-get install nikto -y `
 
 ![alt text](<Images/Screenshot from 2024-09-23 22-56-04.png>)
+
+#### Nikto commands to perform vulnerability scanning
+
+1. ¶Running a basic website scan
+
+- The most basic way to scan a host with Nikto is to use the -h flag with the nikto command:
+
+` nikto -h example.com` 
+
+![alt text](<Images/Screenshot from 2024-09-24 22-49-44.png>)
+
+2. Running a scan on a website with SSL
+
+- Nikto also has an SSL scanner mode, for SSL certificates installed on a website. With this we can get SSL cipher and issuer information.
+
+` nikto -h example.com -ssl`
+
+3. Scanning specific ports with Nikto
+- On certain deployments, web servers are run on non-standard ports like 8081 or 8080, or multiple web servers are run on the same host on different network ports. It's therefore vital to have the ability to scan specific ports as well as the main 80 and 443 ports.
+` nikto -h example.com -port 8083`
+
+4. Save Nikto output to a specific file
+- The Nikto scanner also includes the ability to save the scan output to a file for future reference. This is ideal when running multiple scans and/or large scans which can be easier to reference from a file.
+
+` nikto -h example.com -output /path/to/file.name`
+
+5. Scanning websites which require authentication
+- Nikto also includes the ability to scan websites which are protected by http authentication:
+
+` nikto -h example.com -id username:password`
+
+6. Scanning through a network proxy
+- Certain websites may only be available through a network proxy or specific IP, and this feature allows Nikto to scan the website through that proxy address as well:
+
+` nikto -h example.com -useproxy proxy.ip.address`
 
 ## 7.Nmap
 
