@@ -175,3 +175,26 @@ Nmap is
 - Easy
 - free
 - Well Documented
+
+#### Nmap Commands
+1. Basic scans
+- Scanning the list of active devices on a network is the first step in network mapping. There are two types of scans you can use for that:
+  - Ping scan — Scans the list of devices up and running on a given subnet.
+    - command : ` nmap -sp ip.address`
+  - Scan a single host — Scans a single host for 1000 well-known ports. These ports are the ones used by popular services like SQL, SNTP, apache, and others.
+     - command : `nmap scanme.nmap.org`
+
+     ![alt text](<Images/Screenshot from 2024-09-24 22-57-02.png>)
+
+2. Stealth scan
+- Stealth scanning is performed by sending an SYN packet and analyzing the response.
+
+command : `nmap -sS scanme.nmap.org`
+
+3. Version scanning
+-  application versions is a crucial part in penetration testing.
+
+command : `nmap -sV scanme.nmap.org`
+
+4. OS Scanning
+- Nmap can also provide information about the underlying operating system using TCP/IP fingerprinting.
