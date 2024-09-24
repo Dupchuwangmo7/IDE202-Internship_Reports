@@ -33,3 +33,17 @@ Linux is also distributed under an open source license. Open source follows thes
 
  Linux is an operating system famously known as “by the people, for the people”.  It’s about freedom and freedom of use and freedom of choice.
 
+# Kali Linux
+**Kali Linux** (formerly known as BackTrack Linux) is an open-source, Debian-based Linux distribution which allows users to perform advanced penetration testing and security auditing. 
+
+#### Kali Linux Features
+- Kali linux is free 
+- All of the source code which goes into Kali Linux is available for anyone who wants to tweak or rebuild packages to suit their specific needs.
+-  Linux users can easily locate binaries, support files, libraries, and so on.
+-  Kali supports a wide variety of hardware and as many wireless devices as possible, including USB-based devices.
+ - As penetration testers, the development team often needs to do wireless assessments, so our kernel has the latest injection patches included.
+ - Developed in a secure environment
+ 
+
+ ## Why Kali linux?
+ 
