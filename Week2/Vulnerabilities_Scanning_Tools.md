@@ -9,13 +9,41 @@ There are multiple vulnerability scanner to ensure safety of an environment.
 #### List of Vulnerabilities Scanner
 
 ## 1. Acunetix
-It is an automated we applicaton security testing tools that audits web applications by checking for vulnerabilities like SQL injections, Cross site scripting and other exploitable vulnerabilities.
+It is an automated web applicaton security testing tools that audits web applications by checking for vulnerabilities like SQL injections, Cross site scripting and other exploitable vulnerabilities.
 
-What is Acunetix deepscan?
+ Acunetix scans any website or web application that is accessible via a web browser and uses the HTTP/HTTPS protocol.
+
+#### How is works?
+1. Acunetix DeepScan analyses the entire website by following all the links on the site, including links that are dynamically constructed using JavaScript, and links found in robots.txt and sitemap.xml (if available).
+
+2. If Acunetix AcuSensor Technology is enabled, the sensor will retrieve a listing of all the files present in the web application directory and add the files not found by the crawler to the crawler output. Such files usually are not discovered by the crawler as they are not accessible from the web server, or not linked through the website.
+-  Acunetix AcuSensor also analyses files which are not accessible from the internet, such as web.config.
+
+###### note 
+A web crawler, or spider, is a type of bot that is typically operated by search engines. 
+
+3. After the crawling process, the scanner automatically launches a series of vulnerability checks on each page found, in essence emulating a hacker. Acunetix also analyses each page for places where it can input data, and subsequently attempts all the different input combinations. This is the Automated Scan Stage. If the AcuSensor Technology is enabled, a series of additional vulnerability checks are launched against the website. More information about AcuSensor is provided in the following section.
+
+4. The vulnerabilities identified are shown in the Scan Results. Each vulnerability alert contains information about the vulnerability such as POST data used, affected item, HTTP response of the server and more.
+
+5. If AcuSensor Technology is used, details such as source code line number, stack trace or affected SQL query which lead to the vulnerability are listed.  Recommendations on how to fix the vulnerability are also shown.
+
+6. Various reports can be generated on completed scans, including Executive Summary report, Developer report and various compliance reports.
+
+
+#### What is Acunetix deepscan?
 
 - Is the latest revolutionary technology avaliable within acunetix that can crawl and scan modern     HTML5 and JavaScript-based web applications.
 
 - Only web vulnerabilities scanner on the market capable of doing this.
+
+#### What is AcuSensor Technology?
+-  it identifies more vulnerabilities than other Web Application Scanners, whilst generating less false positives.
+
+- Acunetix AcuSensor indicates exactly where in code the vulnerability is and reports additional debug information.
+
+- Alerts about the web application configuration problems which can result in a security misconfiguration, or expose sensitive information. 
+
 
 
 ## 2. Burp Suite
