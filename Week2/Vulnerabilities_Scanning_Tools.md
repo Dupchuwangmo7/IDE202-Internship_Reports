@@ -31,8 +31,11 @@ It is a web vulnerability scanner that is frequently updated, and integrates wit
 It is a full-featured vulnerability scanner which include unauthenticated and authenticated testing.
 
 ## 4. Nexpose
+Nexpose vulnerability scanner is an automated penetration testing system. Nexpose can help you identify the open ports, applications, and services on each scanned machine.
+
 - It is one of the most leading and the most used Network vulnerability scanner.
 - And it operates all physical location, cloud and mobile environment.
+-  Nexpose has a desirable feature called Live Monitoring. Live Monitoring collects data and creates action plans.
 
  ## 5. Necess
  - It takes care of malware, software issues, patching and misconfigation adware removal tool over a wide range of application and operating systems.
@@ -57,3 +60,17 @@ It is a full-featured vulnerability scanner which include unauthenticated and au
 Installation - ` sudo apt-get install nikto -y `
 
 ![alt text](<Images/Screenshot from 2024-09-23 22-56-04.png>)
+
+## 7.Nmap
+
+It is security scanner that is also used by organizations for network discovery, inventory, managing service upgrade schedules, and monitoring host or service uptime.
+
+Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics.
+
+Nmap is
+- Flexible 
+- Powerful
+- Portable
+- Easy
+- free
+- Well Documented
