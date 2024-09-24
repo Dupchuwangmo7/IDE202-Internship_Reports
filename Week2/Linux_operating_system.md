@@ -19,6 +19,28 @@ The Linux operating system comprises several different pieces:
 
 7. **Applications –** Linux offers thousands upon thousands of high-quality software titles that can be easily found and installed.
 
+## Linux command Line
+File in the linux system are arranged in a hierarchical directory structure(in a tree-like pattern in directories) 
+
+##### Root
+- Most root or the basic directory in linux is a root directory
+- Reprensented with forward slash (/)
+
+
+##### pwd (present working directory)
+- this showa you which directory you are currently working in.
+
+![alt text](<Images/Screenshot from 2024-09-24 21-43-12.png>)
+
+##### cd (change dirctory)
+
+![alt text](<Images/Screenshot from 2024-09-24 21-46-28.png>)
+
+#### Note
+**Shell** - the shell is a program that takes command from the keyboard and gives them to operating system to perform.
+
+**Terminal** - is a tool which we can use to pass our shell commands. It is a program which opens window and let us interact with the shell.
+
 
 # Why use Linux?
  
@@ -45,5 +67,6 @@ Linux is also distributed under an open source license. Open source follows thes
  - Developed in a secure environment
  
 
- ## Why Kali linux?
+
+ 
  
