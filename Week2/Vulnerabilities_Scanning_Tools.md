@@ -51,6 +51,34 @@ It is a web vulnerability scanner that is frequently updated, and integrates wit
 
 ![alt text](<Images/Screenshot from 2024-09-23 17-26-46.png>)
 
+The tools offered by BurpSuite are:
+
+1. Spider:
+- It is a web spider/crawler that is used to map the target web application. The objective of the mapping is to get a list of endpoints so that their functionality can be observed and potential vulnerabilities can be found. 
+
+2. Proxy:
+- BurpSuite contains an intercepting proxy that lets the user see and modify the contents of requests and responses while they are in transit.
+
+3. Intruder:
+
+The intruder is used for:
+
+- Brute-force attacks on password forms, pin forms, and other such forms.
+- The dictionary attack on password forms, fields that are suspected of being vulnerable to XSS or SQL injection.
+- Testing and attacking rate limiting on the web-app.
+
+4. Repeater:
+Repeater lets a user send requests repeatedly with manual modifications. It is used for:
+
+- Verifying whether the user-supplied values are being verified.
+- If user-supplied values are being verified, how well is it being done?
+- What values is the server expecting in an input parameter/request header?
+How does the server handle unexpected values?
+- Is input sanitation being applied by the server?
+- How well the server sanitizes the user-supplied inputs?
+- What is the sanitation style being used by the server?
+- Among all the cookies present, which one is the actual session cookie.
+
 
 ## 3. OpenVAS
  It is vulnerability analysis tool that allows  scan network devices and server. It looks for an IP address and checks for any open service by scanning through the open ports, vulnerabilities and misconfigation in the existing facilities.
