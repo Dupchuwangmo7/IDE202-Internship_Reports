@@ -79,6 +79,7 @@ How does the server handle unexpected values?
 - What is the sanitation style being used by the server?
 - Among all the cookies present, which one is the actual session cookie.
 
+References - GeeksforGeeks. (2022, September 30). What is Burp Suite? GeeksforGeeks.
 
 ## 3. OpenVAS
  It is vulnerability analysis tool that allows  scan network devices and server. It looks for an IP address and checks for any open service by scanning through the open ports, vulnerabilities and misconfigation in the existing facilities.
@@ -119,12 +120,12 @@ The Nexpose vulnerability scanner integrates with Rapid7’s Metasploit to then 
 
 Vulnerabilities that are exploited are first prioritized by Nexpose. This keeps security operations teams from getting overloaded with security alerts. 
 
- ## 5. Necess
+ ## 5. Nessus
  - It takes care of malware, software issues, patching and misconfigation adware removal tool over a wide range of application and operating systems.
 
  - It is ideal tool for pen tester, ethical hacker and bug hunters.
 
- - Necess springs and procative security procedure by identifying the vulnerabilities in time before hacker use it for malicious purpose.
+ - Nessus springs and procative security procedure by identifying the vulnerabilities in time before hacker use it for malicious purpose.
 
  - It takes care of remote code execuation flaws.
  
@@ -139,8 +140,7 @@ Tenable and the Nessus team continually develop “plugins” to perform specifi
 
 3. This information is presented within a user interface and can be configured to run on a set schedule and provide email notifications when completed.
 
-References - https://forgesecure.com/what-is-nessus/#ib-toc-anchor-2 
-
+References - Lugsden, A. (2024, August 29). What is Nessus: Running Your First Vulnerability Scan. Forge Secure.
 
  ## 6. Nikto
  - It is a vulnerability scanner that helps in understanding server versions, functions perdorming a test on the websers to identify threads and walware presences.
@@ -226,3 +226,6 @@ command : `nmap -sV scanme.nmap.org`
 
 4. OS Scanning
 - Nmap can also provide information about the underlying operating system using TCP/IP fingerprinting.
+
+# References
+Lugsden, A. (2024, August 29). What is Nessus: Running Your First Vulnerability Scan. Forge Secure.

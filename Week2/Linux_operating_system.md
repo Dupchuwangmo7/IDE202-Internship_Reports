@@ -69,4 +69,4 @@ Linux is also distributed under an open source license. Open source follows thes
 
 
  
- 
+ References- What is Linux? - Linux.com. (2022, August 26).
