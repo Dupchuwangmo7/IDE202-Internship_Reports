@@ -11,3 +11,7 @@ Phishing simulations are controlled, mock phishing attacks conducted by organiza
 Phishing simulations are an important tool in cybersecurity training, helping organizations strengthen their first line of defense against real phishing attacks.
 
 ## Phishing Simulation Tools
+
+###  ZPhisher
+
+It is automated fishing tool 
