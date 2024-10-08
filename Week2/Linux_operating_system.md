@@ -36,6 +36,103 @@ File in the linux system are arranged in a hierarchical directory structure(in a
 
 ![alt text](<Images/Screenshot from 2024-09-24 21-46-28.png>)
 
+##### echo
+- Output any text that we provide
+
+![alt text](<Images/Screenshot from 2024-10-08 08-34-39.png>)
+
+##### whoami
+- Find out what user we're currently logged in as.
+
+![alt text](<Images/Screenshot from 2024-10-08 08-36-53.png>)
+
+#####  Grep
+- command-line tool that is used for searching plain-text data sets for lines matching a regular expression.
+
+
+### Basic Syntax
+```bash
+grep [options] pattern [file...]
+```
+
+### Common Options
+
+- **Basic Search:**
+  ```bash
+  grep "pattern" filename
+  ```
+  Searches for "pattern" in the specified file.
+
+- **Recursive Search (`-r` or `-R`):**
+  ```bash
+  grep -r "pattern" /path/to/directory
+  ```
+  Searches for "pattern" in all files within the specified directory and subdirectories.
+
+- **Ignore Case (`-i`):**
+  ```bash
+  grep -i "pattern" filename
+  ```
+  Case-insensitive search.
+
+- **Show Line Numbers (`-n`):**
+  ```bash
+  grep -n "pattern" filename
+  ```
+  Displays line numbers with each matching line.
+
+- **Count Matches (`-c`):**
+  ```bash
+  grep -c "pattern" filename
+  ```
+  Counts the number of lines that match the pattern in the specified file.
+
+- **Match Whole Words (`-w`):**
+  ```bash
+  grep -w "word" filename
+  ```
+  Matches whole words only, not substrings.
+
+- **Invert Match (`-v`):**
+  ```bash
+  grep -v "pattern" filename
+  ```
+  Shows lines that do *not* match the pattern.
+
+### Advanced Usage
+
+- **Using Regular Expressions (`-E` for Extended):**
+  ```bash
+  grep -E "pattern1|pattern2" filename
+  ```
+  Searches for multiple patterns.
+
+- **Print Only Matching Part (`-o`):**
+  ```bash
+  grep -o "pattern" filename
+  ```
+  Shows only the matching parts, not the entire line.
+
+### Example Usage
+
+To find lines containing the word "error" (case-insensitive) in all `.log` files in a directory:
+```bash
+grep -ri "error" *.log
+```
+## Linux Operator
+
+##### Operator "&"
+- This operator allows  to run commands in the background of your terminal.
+
+##### Operator "&&"
+- This operator allows you to combine multiple commands together in one line of your terminal.
+
+##### Operator ">"
+- This operator is a redirector - meaning that we can take the output from a command (such as using cat to output a file) and direct it elsewhere.
+
+##### Operator ">>"
+- This operator does the same function of the > operator but appends the output rather than replacing (meaning nothing is overwritten).
+
 #### Note
 **Shell** - the shell is a program that takes command from the keyboard and gives them to operating system to perform.
 
