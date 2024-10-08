@@ -163,7 +163,4 @@ Linux is also distributed under an open source license. Open source follows thes
  - As penetration testers, the development team often needs to do wireless assessments, so our kernel has the latest injection patches included.
  - Developed in a secure environment
  
-
-
- 
  References- What is Linux? - Linux.com. (2022, August 26).
