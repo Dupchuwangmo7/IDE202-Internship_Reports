@@ -47,6 +47,41 @@ Overall, OWASP ZAP provides a range of features for free that are available only
 
 You can also learn more from [Try Hack Me ](https://tryhackme.com/r/room/learnowaspzap) room.
 
+
+When using **OWASP ZAP** (Zed Attack Proxy) to scan a website, the **automated scan** feature offers options for both **traditional spider** and **Ajax spider** modes. Here’s an overview of each, along with setup instructions:
+
+### Automated Scan Overview
+- **Passive and Active Scanning**: ZAP's automated scan performs both passive scans (less intrusive, focusing on building a sitemap) and active scans (which try to detect vulnerabilities by testing for issues directly).
+- **Sitemap Building**: The automated scan maps out the website's structure by discovering links, directories, and hidden content, helping you understand the application and potential weak spots.
+
+### Spider Options
+
+1. **Traditional Spider**:
+   - **Function**: This is a passive scan that enumerates links and directories without brute-forcing hidden resources.
+   - **Usage**: The traditional spider is relatively quiet compared to brute-force techniques, and it’s often used for initial scans. It may not find every resource, but it’s effective for quickly mapping accessible areas like login pages or other key sections.
+
+2. **Ajax Spider**:
+   - **Function**: The Ajax spider is an add-on that crawls JavaScript-heavy (AJAX) sites more thoroughly, covering interactive and dynamic content that traditional spiders may miss.
+   - **Usage**: The Ajax Spider integrates **Crawljax**, which interacts with AJAX-driven components, simulating user actions and uncovering hidden elements on dynamic pages.
+   - **Browser Requirement**: The Ajax Spider requires a web browser and proxy setup, which makes it compatible with **HTMLUnit**—a headless browser that supports JavaScript.
+
+### Setting up HTMLUnit for the Ajax Spider
+
+1. **Install HTMLUnit**:
+   - Run the following command to install the HTMLUnit library, which ZAP will use to simulate a browser:
+     ```bash
+     sudo apt install libjenkins-htmlunit-core-js-java
+     ```
+
+2. **Select HTMLUnit in ZAP**:
+   - In ZAP, go to the **Ajax Spider** settings and choose **HTMLUnit** from the dropdown menu.
+
+3. **Configure Options**:
+   - Access further configuration by opening the **Options** menu (shortcut `Ctrl + Alt + O`), where you can set up parameters for both the traditional and Ajax spiders for customized scans.
+
+### Running the Automated Scan
+- Once configured, run the automated scan by selecting either or both spiders. Using both the traditional spider and Ajax spider together provides a comprehensive sitemap, covering both static and dynamic content.
+
 ## Installation
 1. Download the appropriate installer from the Zaproxy.org
 
@@ -55,11 +90,11 @@ You can also learn more from [Try Hack Me ](https://tryhackme.com/r/room/learnow
 
 3. ` cd Downloads/`
 
-4. ` chmod +x name_of_the_file ` to change fle into executable permission.
+4. ` chmod +x name_of_the_file ` to change file into executable permission.
 
 5. ` ./name_of_the_file ` to install.
 
-And if you get **Failed to load module "canberra-gtk-module** issues, run the command ` sudo apt install libcanberra-gtk-module libcanberra-gtk3-module `.
+And if you get **Failed to load module "canberra-gtk-module"** issues, run the command ` sudo apt install libcanberra-gtk-module libcanberra-gtk3-module `.
 
 
  

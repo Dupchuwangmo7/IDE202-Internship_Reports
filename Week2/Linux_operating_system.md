@@ -2,22 +2,52 @@
 
 **Operating system** is software that manages the commnunication between software and hardware system in the computer. Just like Windows, iOS, and Mac OS, Linux is an operating system. One of the most popular platform, Android, is lso powered by linux operating system.
 
+## Philosophy
 
-The Linux operating system comprises several different pieces:
 
-1. **Bootloader -** The software that manages the boot process of a computer. For most users, this will simply be a splash screen that pops up and eventually goes away to boot into the operating system.
+Linux is built on a philosophy that emphasizes simplicity, flexibility, and user control, encapsulated in its five core principles:
 
-2. **Kernel –** The kernel is the core of the system and manages the CPU, memory, and peripheral devices. The kernel is the lowest level of the OS.
+1. **Everything is a File**: In Linux, everything is treated as a file, from hardware devices to system configurations. This principle unifies the operating system’s design, simplifying management. Configuration for services and applications is typically stored in readable text files, which makes troubleshooting and editing straightforward.
 
-3. **Init system –** It is the init system that manages the boot process, once the initial booting is handed over from the bootloader.
+2. **Small, Single-Purpose Programs**: Linux provides a suite of small, dedicated tools, each designed for a specific task. This modularity allows users to choose the best tools for their needs and combine them for maximum efficiency, enhancing both performance and ease of maintenance.
 
-4. **Daemons –** These are background services (printing, sound, scheduling, etc.) that either start up during boot or after you log into the desktop.
+3. **Ability to Chain Programs Together for Complex Tasks**: Linux enables powerful workflow creation by allowing programs to work together. Using “pipes,” users can pass the output of one program as the input to another, chaining tools to perform complex, multi-step tasks, such as data processing and filtering.
 
-5. **Graphical server –** This is the sub-system that displays the graphics on your monitor. It is commonly referred to as the X server or just X.
+4. **Avoid Captive User Interfaces**: Linux emphasizes a command-line-based interface, which maximizes user control. By using the shell, users have deeper and more flexible access to the system than graphical interfaces usually allow, providing enhanced control over configurations and scripts.
 
-6. **Desktop environment –** This where the user interat with. There are many desktop environments to choose from like GNOME, Cinnamon, Mate, Pantheon, Enlightenment, KDE, Xfce, etc.
+5. **Configuration Data Stored in Text Files**: Configuration files, often located in directories like `/etc`, store essential system data in plain text, making it easy for users to access, modify, or back up system settings. For instance, the `/etc/passwd` file contains information about users on the system, which can be edited directly, further underscoring Linux's transparency and accessibility.
 
-7. **Applications –** Linux offers thousands upon thousands of high-quality software titles that can be easily found and installed.
+## Components
+
+Linux is made up of several core components, each playing a specific role in the functionality of the operating system. Here's an overview of these components:
+
+1. **Bootloader**: This is the initial program that loads during the computer's boot-up process. It guides the system in starting the operating system. Parrot Linux, for example, uses the GRUB bootloader, which provides users with options to choose the operating system they want to load.
+
+2. **OS Kernel**: The kernel is the core of Linux, responsible for managing hardware resources and enabling software interactions with hardware devices. It handles crucial tasks, like managing system memory, CPU allocation, and I/O device interactions, serving as the foundation for all other system components.
+
+3. **Daemons**: Known as background services, daemons support essential system functions and run behind the scenes. They handle tasks such as system scheduling, printing, and media services. These daemons start either during boot or upon logging in, ensuring the system operates smoothly and efficiently.
+
+4. **OS Shell**: The shell, or command-line interface, provides an interface between the user and the operating system, allowing users to issue commands and automate tasks. Linux offers several popular shells, such as Bash, Tcsh/Csh, Ksh, Zsh, and Fish, each with unique features tailored to different user preferences.
+
+5. **Graphics Server**: This component enables graphical applications to run by managing the graphical sub-system. The “X-server” (or simply “X”) provides the foundational graphical layer for Linux, supporting local or remote execution of graphical programs within the X-windowing system.
+
+6. **Window Manager**: This is the graphical user interface (GUI) component of Linux, providing users with an intuitive way to interact with applications and manage files visually. Popular options include GNOME, KDE, MATE, Unity, and Cinnamon, each offering unique layouts and features. These environments come with built-in applications like file managers and web browsers, streamlining daily interactions with the OS.
+
+7. **Utilities**: Linux utilities are the applications and tools designed to perform specific tasks, ranging from file management to system monitoring. These utilities support both users and programs, contributing to the system's overall functionality and customization.
+
+## Linux Architecture
+
+
+Linux architecture is structured in layers, each providing a distinct function that builds upon the other to deliver a fully operational system. Here’s a breakdown of each layer:
+
+1. **Hardware**: This is the foundational layer that includes all physical components of the system, such as the CPU, RAM, hard drive, and other peripherals. These devices provide the resources that the operating system will manage and utilize.
+
+2. **Kernel**: The kernel is the core of the Linux operating system. It plays a critical role by abstracting and managing the hardware resources for applications, including CPU time, memory allocation, and data access. The kernel ensures that each process has its own virtual resources and works to prevent conflicts, making sure that the system remains stable and efficient.
+
+3. **Shell**: The shell is the command-line interface (CLI) through which users interact with the Linux kernel. By entering commands into the shell, users can directly control various functions of the kernel, enabling them to manage files, execute programs, and access system utilities.
+
+4. **System Utility**: This layer provides a collection of tools and applications that make the full functionality of the Linux operating system accessible to the user. These utilities allow users to manage files, monitor system performance, and perform a wide range of administrative tasks.
+
 
 ## Linux command Line
 File in the linux system are arranged in a hierarchical directory structure(in a tree-like pattern in directories) 
