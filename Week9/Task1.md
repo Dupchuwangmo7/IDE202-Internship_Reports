@@ -1,5 +1,3 @@
-
-
 # SSH  
 
 **Introduction**  
@@ -128,80 +126,93 @@ The key pair will be generated, with the public key stored in `id_rsa.pub` and t
 4. **Tunneling Services**  
    Encrypt connections to services like databases or web servers through SSH tunnels.  
 
+
+
+# **System Setup and Configuration Report**  
+
+## **Task 1: Install Ubuntu**  
+
+I added new user in my laptop to do this task.
+
+
+1. **Update the System**  
+   - Post-installation, the system was updated to ensure all packages were up-to-date:  
+     ```bash
+     sudo apt update && sudo apt upgrade -y
+     ```  
+
 ---
 
+## **Task 2: Configure Remote Access with Public Key**  
 
+SSH was configured to allow secure remote access using public-key authentication:  
 
-# SSH Configuration Report  
-
-
-## **Task 1: Configure Remote Access with Public Key**  
-
-To eliminate the risks associated with password-based authentication, SSH was configured to use public-key authentication. The steps below detail the process:  
-
-1. **Generate an SSH Key Pair**  
-   - On the client machine, the following command was used to generate a 4096-bit RSA key pair:  
+1. **Install OpenSSH Server**  
+   - The OpenSSH server was installed and started:  
      ```bash
-     ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-     ```  
-   - The private key was stored securely on the client machine, and the public key was saved as `id_rsa.pub`.
-
-2. **Copy the Public Key to the Server**  
-   - The `ssh-copy-id` command was used to add the public key to the server's `~/.ssh/authorized_keys` file:  
-     ```bash
-     ssh-copy-id user@remote_host
-     ```  
-   - Alternatively, the public key was manually appended to the file:  
-     ```bash
-     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+     sudo apt install openssh-server -y
+     sudo systemctl enable ssh
+     sudo systemctl start ssh
      ```  
 
-3. **Disable Password-Based Authentication**  
-   - To enhance security, the SSH server was configured to accept only public-key authentication:  
-     - Edit the SSH configuration file:  
-       ```bash
-       sudo nano /etc/ssh/sshd_config
-       ```  
+2. **Generate an SSH Key Pair**  
+   - On the client machine, a key pair was created:  
+     ```bash
+     ssh-keygen -t rsa -b 4096 -C "user@example.com"
+     ```  
+   - The private key was stored securely, and the public key was saved as `id_rsa.pub`.  
+
+3. **Transfer the Public Key to the Server**  
+   - The public key was added to the server's `~/.ssh/authorized_keys` file:  
+     ```bash
+     ssh-copy-id user@server_ip
+     ```  
+
+4. **Disable Password Authentication**  
+   - To enhance security, password authentication was disabled:  
+     ```bash
+     sudo nano /etc/ssh/sshd_config
+     ```  
      - Update the following parameters:  
        ```plaintext
        PasswordAuthentication no
        PubkeyAuthentication yes
        ```  
-     - Restart the SSH service to apply changes:  
-       ```bash
-       sudo systemctl restart sshd
-       ```  
-
-4. **Test the Configuration**  
-   - The client successfully accessed the server without entering a password:  
+   - Restart the SSH service:  
      ```bash
-     ssh user@remote_host
+     sudo systemctl restart sshd
+     ```  
+
+5. **Verify the Setup**  
+   - Login to the server was tested using the private key:  
+     ```bash
+     ssh user@server_ip
      ```  
 
 ---
 
-## **Task 2: Configure Two-Factor Authentication (2FA)**  
+## **Task 3: Configure Two-Factor Authentication (2FA)**  
 
-To strengthen authentication security, 2FA was configured on the server using Google Authenticator. Here’s how it was set up:  
+To add another layer of security, 2FA was implemented using Google Authenticator:  
 
-1. **Install Google Authenticator**  
-   - On the server, the following command was executed to install the PAM (Pluggable Authentication Module) for Google Authenticator:  
+1. **Install Google Authenticator PAM Module**  
+   - The module was installed on the server:  
      ```bash
-     sudo apt-get install libpam-google-authenticator
+     sudo apt install libpam-google-authenticator -y
      ```  
 
 2. **Set Up 2FA for the User**  
-   - Each user configured their 2FA by running the following command:  
+   - The user configured 2FA by running:  
      ```bash
      google-authenticator
      ```  
-   - Users were prompted to:
-     - Scan the QR code using a 2FA app (e.g., Google Authenticator, Authy).  
-     - Save the emergency backup codes.  
-     - Enable time-based tokens.  
+   - The following options were configured:  
+     - Time-based tokens were enabled.  
+     - Emergency codes were saved for recovery.  
+     - Token validation was limited to prevent replay attacks.  
 
-3. **Configure PAM for SSH**  
-   - The PAM configuration was updated to enable 2FA:  
+3. **Update PAM and SSH Configurations**  
+   - The PAM configuration was updated to enforce 2FA:  
      ```bash
      sudo nano /etc/pam.d/sshd
      ```  
@@ -209,13 +220,11 @@ To strengthen authentication security, 2FA was configured on the server using Go
        ```plaintext
        auth required pam_google_authenticator.so
        ```  
-
-4. **Update SSH Configuration**  
-   - The SSH server configuration was modified to include 2FA:  
+   - Update the SSH configuration:  
      ```bash
      sudo nano /etc/ssh/sshd_config
      ```  
-     - Update or add these parameters:  
+     - Modify these parameters:  
        ```plaintext
        ChallengeResponseAuthentication yes
        UsePAM yes
@@ -225,29 +234,29 @@ To strengthen authentication security, 2FA was configured on the server using Go
      sudo systemctl restart sshd
      ```  
 
-5. **Verify 2FA**  
-   - Upon SSH login, users were required to enter:  
-     - Their private key passphrase (if used).  
-     - A time-based 2FA code generated by the authenticator app.  
+4. **Test 2FA**  
+   - Upon login, the system prompted for:  
+     - The SSH key passphrase.  
+     - A time-based one-time password (OTP) generated by the authenticator app.  
 
 ---
 
-## **Task 3: Configure Log Rotation**  
+## **Task 4: Configure Log Rotation**  
 
-To ensure system logs do not consume excessive disk space, log rotation was configured using the `logrotate` utility:  
+To manage logs effectively and prevent disk space issues, log rotation was configured:  
 
 1. **Install Logrotate**  
-   - Logrotate was verified to be installed on the server:  
+   - Logrotate was installed and verified:  
      ```bash
-     sudo apt-get install logrotate
+     sudo apt install logrotate -y
      ```  
 
-2. **Configure Log Rotation for SSH Logs**  
+2. **Create Custom Log Rotation Rules**  
    - A custom configuration file was created for SSH logs:  
      ```bash
      sudo nano /etc/logrotate.d/sshd
      ```  
-   - The following rules were added to rotate SSH logs weekly and retain logs for four weeks:  
+   - The following rules were added to rotate logs weekly and retain them for four weeks:  
      ```plaintext
      /var/log/auth.log {
          weekly
@@ -265,24 +274,15 @@ To ensure system logs do not consume excessive disk space, log rotation was conf
      ```  
 
 3. **Test Log Rotation**  
-   - The configuration was tested to ensure proper rotation:  
+   - The setup was tested to ensure logs rotated as expected:  
      ```bash
      sudo logrotate -f /etc/logrotate.d/sshd
      ```  
 
 4. **Verify Rotation**  
-   - Old logs were archived, compressed, and stored as `.gz` files.  
+   - Compressed and archived log files were checked in the `/var/log/` directory.  
 
----
 
-## **Conclusion**  
 
-The configurations implemented during this task significantly enhanced the server’s security and maintainability:  
+ 
 
-1. Public-key authentication ensures secure, password-less login, mitigating brute-force attack risks.  
-2. Two-factor authentication adds a critical second layer of security, protecting the system even if keys are compromised.  
-3. Log rotation ensures efficient log management, preventing excessive disk space usage and ensuring compliance with logging standards.  
-
-These measures collectively contribute to a robust and secure remote access environment.  
-
----  
