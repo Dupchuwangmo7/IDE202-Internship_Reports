@@ -43,6 +43,8 @@ SonarSource’s ecosystem includes three key tools: **SonarLint**, **SonarQube**
 1. **SonarLint**  
    A plugin for popular IDEs like IntelliJ, Visual Studio, VS Code, and Eclipse, SonarLint provides real-time feedback to developers as they write code. By detecting issues early, SonarLint helps maintain quality at the source and minimizes technical debt.  
 
+   
+
 2. **SonarQube**  
    The core component of the Sonar suite, SonarQube integrates into CI/CD workflows to analyze pull requests and merge requests against predefined quality standards. Its **Sonar Way** quality profiles provide tailored best practices for each supported language, ensuring consistency and compliance across teams.  
 
@@ -57,12 +59,16 @@ SonarSource’s ecosystem includes three key tools: **SonarLint**, **SonarQube**
      ```bash  
      docker run -d -p 9000:9000 sonarqube:lts-community  
      ```  
+     ![alt text](<images/Screenshot from 2024-11-28 11-05-28.png>)
+
      **Command Breakdown**:  
      - **`docker run`**: Launches a new container.  
      - **`-d`**: Runs the container in detached mode.  
      - **`-p 9000:9000`**: Maps port 9000 on the host to port 9000 in the container.  
      - **`sonarqube:lts-community`**: Specifies the SonarQube image (latest long-term support community edition).  
      Access the SonarQube dashboard at `http://localhost:9000` after setup.  
+
+![alt text](<images/Screenshot from 2024-11-28 11-11-01.png>)
 
 **Conclusion**  
 SonarSource’s suite—SonarLint, SonarQube, and SonarCloud—provides a comprehensive solution for maintaining Clean Code. By integrating real-time feedback, automated quality checks, and robust quality profiles, the Sonar solution aligns with the “Clean as You Code” philosophy. This incremental approach fosters continuous improvement, enabling teams to build secure, reliable, and maintainable software over time.  

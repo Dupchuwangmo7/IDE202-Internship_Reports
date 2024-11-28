@@ -73,6 +73,8 @@ To generate an SSH key pair, follow these steps:
 
 The key pair will be generated, with the public key stored in `id_rsa.pub` and the private key in `id_rsa`.  
 
+![alt text](<Imgaes/Screenshot from 2024-11-26 16-58-20.png>)
+
 ---
 
 **Using SSH Keys**  
